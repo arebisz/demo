@@ -2,7 +2,7 @@ project = "YOUR_PROJECT_ID"
 email_address = "YOUR_EMAIL"
 email_display_name = "YOUR_NAME"
 project_num = "YOUR_PROJECT_NUM"
-include_monitoring_module = false 
+monitoring = true
 
 patching = true
 
