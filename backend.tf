@@ -1,6 +1,6 @@
 terraform {
     backend "gcs" {
-            bucket = "PROJECT_ID_terraform_setup"
-            prefix = "terraform_state"
+            bucket = "PROJECT_ID_terraform"
+            prefix = "monit_state"
     }
 }
