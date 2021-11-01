@@ -12,4 +12,5 @@ resource "google_logging_project_sink" "instance-sink" {
   description = "some explanation on what this is"
   destination = "storage.googleapis.com/cos-logging-bucket"
   filter      = "resource.type = gce_instance AND $var.cos_managed_instances_id"
+  unique_writer_identity = true
 }
