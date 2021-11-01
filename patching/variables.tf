@@ -1,0 +1,14 @@
+variable "project_id" {}
+variable "zone" {}
+variable "region" {}
+variable "cos_patching_labels" {}
+variable "instance_name_prefixes" {}
+variable "duration" {}
+variable "rollout_mode" {}
+variable "rollout_disruption_budget_percentage" {}
+variable "recurring_schedule" {}
+variable "recurring_schedule_time_zone_id" {}
+variable "recurring_schedule_time_of_day_hours" {}
+variable "recurring_schedule_time_of_day_minutes" {}
+variable "recurring_schedule_monthly_month_day" {}
+variable "one_time_schedule_execute_time" {}
