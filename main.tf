@@ -14,7 +14,7 @@ provider "google" {
 
 module "monitoring" {
     count = var.monitoring ? 1 : 0
-    source = "./monitoring
+    source = "./monitoring"
     email_address = var.email_address
     email_display_name = var.email_display_name
 }
