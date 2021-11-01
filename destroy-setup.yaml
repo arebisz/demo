@@ -1,0 +1,12 @@
+steps:
+- name: 'gcr.io/cloud-builders/gcloud'
+  entrypoint: 'bash'
+  id: backend_bucket
+  args: ['replace_backend_bucket_name.bash']
+- name: hashicorp/terraform:latest
+  id: init
+  args: ['init']
+  waitFor: ["backend_bucket"]
+- name: hashicorp/terraform:latest
+  args: ['destroy', '-auto-approve']
+  waitFor: ["init"]
