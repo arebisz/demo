@@ -48,10 +48,10 @@ variable "patching_enabled" {
     default = false
 }
 
-#variable "project_id" {
-#    type = string
-#    description = "Project name"
-#}
+variable "project_id" {
+    type = string
+    description = "Project name"
+}
 
 variable "zone" {
     type = string
