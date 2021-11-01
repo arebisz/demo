@@ -12,7 +12,7 @@ variable "project_num" {
     type = string
 }
 
-variable "include_monitoring_module" {
+variable "monitoring" {
     type = bool
     default = false
 }
@@ -30,6 +30,7 @@ variable "include_monitoring_module" {
 # }
 variable "patching" {
     type = bool
+    default = false
 }
 variable "TagsConditionKey" {
     default = "cos_managed"
