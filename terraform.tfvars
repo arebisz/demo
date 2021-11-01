@@ -6,7 +6,7 @@ monitoring_enabled = true
 patching_enabled = true
 
 # GENERAL VARIABLES
-#project_id = "ccp-lab"
+project_id = "ccp-lab"
 region = "us-east1"
 zone = "us-east1-b"
 
