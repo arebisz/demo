@@ -14,7 +14,7 @@
 #    type =  string 
 #}
 
-variable "monitoring" {
+variable "monitoring_enabled" {
     type = bool
     default = false
 }
@@ -31,7 +31,7 @@ variable "email_display_name" {
 #    type = string
 #}
 
-variable "patching" {
+variable "patching_enabled" {
     type = bool
     default = false
 }
