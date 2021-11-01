@@ -1,14 +1,26 @@
 # variable "SnowClientId" {
 #     sensitive = true
 #     type = string
-#     description = "Provide the iPaaS API authentication id.
+#     description = "Provide the iPaaS API authentication id."
 # }
 
 # variable "SnowClientSecret" {
 #     sensitive = true
 #     type = string
-#     description = "Provide the iPaaS API authentication secret.
+#     description = "Provide the iPaaS API authentication secret."
 # }
+
+variable "TagsConditionKey" {
+    default = "cos_managed"
+    type = string
+    description = "Resources with this Tag Key will be managed by COS."
+}
+
+variable "TagsConditionValue" {
+    default = "yes"
+    type = string
+    description = "Resources with this Tag Value will be managed by COS"
+}
 
 #variable "project" {
 #    type =  string 
@@ -36,71 +48,19 @@ variable "patching_enabled" {
     default = false
 }
 
-variable "TagsConditionKey" {
-    default = "cos_managed"
-    type = string
-    description = "Resources with this Tag Key will be managed by COS Monitoring and SSM"
-}
-
-variable "TagsConditionValue" {
-    default = "yes"
-    type = string
-    description = "Resources with this Tag Value will be managed by COS Monitoring and SSM"
-}
-
-variable "LoggingEnabled" {
-    default = true
-    type = string
-    description = "Specifies if the COS Logging module and resources will be deployed"
-    validation {
-        condition     = can(regex("^(true|false)$", var.LoggingEnabled))
-        error_message = "Must be true or false."
-    }
-}
-
-variable "MonitoringEnabled" {
-    default = true
-    type = string
-    description = "Specifies if the COS Monitoring module and resources will be deployed"
-    validation {
-        condition     = can(regex("^(true|false)$", var.MonitoringEnabled))
-        error_message = "Must be true or false."
-    }
-}
-
-variable "BackupEnabled" {
-    default = true
-    type = string
-    description = "Specifies if the COS Backup module and resources will be deployed"
-    validation {
-        condition     = can(regex("^(true|false)$", var.BackupEnabled))
-        error_message = "Must be true or false."
-    }
-}
-
-variable "PatchingEnabled" {
-    default = true
-    type = string
-    description = "Specifies if the COS Patching module and resources will be deployed"
-    validation {
-        condition     = can(regex("^(true|false)$", var.PatchingEnabled))
-        error_message = "Must be true or false."
-    }
-}
-
-variable "project_id" {
-    type = string
-    description = "GCP project to use"
-}
+#variable "project_id" {
+#    type = string
+#    description = "Project name"
+#}
 
 variable "zone" {
     type = string
-    description = "GCP zone to use"
+    description = "Region zone"
 }
 
 variable "region" {
     type = string
-    description = "GCP region to use"
+    description = "Region"
 }
 
 variable "cos_patching_labels" {
