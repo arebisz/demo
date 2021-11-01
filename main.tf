@@ -18,7 +18,3 @@ module "monitoring" {
     email_address = var.email_address
     email_display_name = var.email_display_name
 }
-
-module "logging" {
-    source = "./logging"
-}
