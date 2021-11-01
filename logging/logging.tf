@@ -1,5 +1,5 @@
 resource "google_storage_bucket" "cos-logging-bucket" {
-  name          = "cos-logging-bucke"
+  name          = "cos-logging-bucket"
   location      = "US"
   retention_policy {
     retention_period = 8035200
