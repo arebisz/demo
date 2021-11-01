@@ -12,14 +12,14 @@ provider "google" {
     zone    = var.zone
 }
 
-module "monitoring" {
+module "monitoring_enabled" {
     count = var.monitoring ? 1 : 0
     source = "./monitoring"
     email_address = var.email_address
     email_display_name = var.email_display_name
 }
     
-module "patching" {
+module "patching_enabled" {
     count = var.patching ? 1 : 0
     source = "./patching"
     project_id = var.project_id
