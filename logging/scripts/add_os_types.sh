@@ -21,7 +21,7 @@ gcloud services enable logging.googleapis.com
 # gcloud projects add-iam-policy-binding $project_id   --member="serviceAccount:terraform@$project_id.iam.gserviceaccount.com"   --role="roles/osconfig.guestPolicyAdmin" 
 # gcloud projects add-iam-policy-binding $project_id   --member="serviceAccount:terraform@$project_id.iam.gserviceaccount.com"   --role="roles/iam.serviceAccountUser"
 # gcloud projects add-iam-policy-binding $project_id   --member="serviceAccount:terraform@$project_id.iam.gserviceaccount.com"   --role="roles/logging.logWriter"
-# gcloud projects add-iam-policy-binding $project_id   --member="serviceAccount:terraform@$project_id.iam.gserviceaccount.com"   --role="roles/logging.configWriter"
+gcloud projects add-iam-policy-binding $project_id   --member="serviceAccount:terraform@$project_id.iam.gserviceaccount.com"   --role="roles/logging.configWriter"
 # gcloud projects add-iam-policy-binding $project_id   --member="serviceAccount:terraform@$project_id.iam.gserviceaccount.com"   --role="roles/monitoring.metricWriter"
 # gcloud projects add-iam-policy-binding $project_id   --member="serviceAccount:terraform@$project_id.iam.gserviceaccount.com"   --role="roles/storage.admin"
 
