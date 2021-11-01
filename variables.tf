@@ -1,37 +1,41 @@
-variable "project" {
-    type =  string 
-}
-variable "email_address" {
-    type = string 
-}
-variable "email_display_name" {
-    type = string 
-}
+# variable "SnowClientId" {
+#     sensitive = true
+#     type = string
+#     description = "Provide the iPaaS API authentication id.
+# }
 
-variable "project_num" {
-    type = string
-}
+# variable "SnowClientSecret" {
+#     sensitive = true
+#     type = string
+#     description = "Provide the iPaaS API authentication secret.
+# }
+
+#variable "project" {
+#    type =  string 
+#}
 
 variable "monitoring" {
     type = bool
     default = false
 }
 
-# variable "SnowClientId" {
-#     sensitive = true
-#     type = string
-#     description = "Provide the iPaaS API authentication id. stored in Secret Manager. used by COS-SNOW Lambda to authenticate with iPaaS cloud native endpoint"
-# }
+variable "email_address" {
+    type = string 
+}
 
-# variable "SnowClientSecret" {
-#     sensitive = true
-#     type = string
-#     description = "Provide the iPaaS API authentication secret. stored in Secret Manager. used by COS-SNOW Lambda to authenticate with iPaaS cloud native endpoint"
-# }
+variable "email_display_name" {
+    type = string 
+}
+
+#variable "project_num" {
+#    type = string
+#}
+
 variable "patching" {
     type = bool
     default = false
 }
+
 variable "TagsConditionKey" {
     default = "cos_managed"
     type = string
