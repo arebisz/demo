@@ -10,6 +10,7 @@ echo $project_id
 gcloud services enable compute.googleapis.com
 gcloud services enable osconfig.googleapis.com
 gcloud services enable cloudresourcemanager.googleapis.com
+gcloud services enable logging.googleapis.com
 # iam_accounts=($gcloud iam service-accounts list sed -n 's/.*EMAIL: //p')
 # for account in $iam_accounts; do
 #     if [[ ! "terraform@logging-dla-capa-terraform.iam.gserviceaccount.com" =~ "$account" ]]; then
