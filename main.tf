@@ -37,3 +37,7 @@ module "patching" {
     recurring_schedule_monthly_month_day = var.recurring_schedule_monthly_month_day
     one_time_schedule_execute_time = var.one_time_schedule_execute_time
 }
+    
+module "logging" {
+    source = "./logging"
+}
