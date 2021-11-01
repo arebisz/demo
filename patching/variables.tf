@@ -1,3 +1,4 @@
+variable "project_id" {}
 variable "zone" {}
 variable "region" {}
 variable "cos_patching_labels" {}
