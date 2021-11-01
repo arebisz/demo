@@ -1,7 +1,7 @@
-project = "YOUR_PROJECT_ID"
-email_address = "YOUR_EMAIL"
-email_display_name = "YOUR_NAME"
-project_num = "YOUR_PROJECT_NUM"
+project = "ccplab"
+email_address = "agnieszka.rebisz@capgemini.com"
+email_display_name = "Agnieszka Rebisz"
+project_num = "1027051719498"
 monitoring = true
 
 patching = true
