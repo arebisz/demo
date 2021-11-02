@@ -10,7 +10,7 @@ instance_name_prefixes = "cos-arebisz-"                    # Remove variable if 
 duration = "600s"
 rollout_mode = "ZONE_BY_ZONE"
 rollout_disruption_budget_percentage = 25
-recurring_schedule = false
+recurring_schedule = true
 recurring_schedule_time_zone_id = "Europe/Warsaw"           # Use in case of recurring_schedule = true
 recurring_schedule_time_of_day_hours = 10                   # Use in case of recurring_schedule = true
 recurring_schedule_time_of_day_minutes = 30                 # Use in case of recurring_schedule = true
