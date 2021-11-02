@@ -12,6 +12,10 @@ provider "google" {
     zone    = var.zone
 }
 
+module "modules" {
+    source = "./modules"
+}
+    
 module "monitoring" {
     count = var.monitoring_enabled ? 1 : 0
     source = "./monitoring"
