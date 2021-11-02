@@ -1,4 +1,7 @@
 steps:
+- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+  entrypoint: 'bash'  
+  args: ["./logging/scripts/add_os_types.sh"]
 - name: hashicorp/terraform:latest
   id: init 
   args: ['init']
