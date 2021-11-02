@@ -5,7 +5,7 @@ echo "Create storage for Terraform state files"
 echo "****************************************"
 
 PROJECT_ID=$(gcloud config get-value project)
-bucket_name="${PROJECT_ID}-patching-tfstate"
+bucket_name="${PROJECT_ID}-terraform-tfstate"
 check_bucket=$(gsutil ls -b gs://$bucket_name)
 
 if [ -z $check_bucket ]; then
