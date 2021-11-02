@@ -35,3 +35,10 @@ module "agent_policy" {
     },
   ]
 }
+  
+data "external" "env_override" {
+  count = var.enabled ? 1 : 0
+
+  program = ["${path.module}/scripts/check_env.sh"]
+  query   = {}
+}
