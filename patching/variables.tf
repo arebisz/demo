@@ -1,8 +1,3 @@
-variable "cos_patching_labels" {
-    type = map
-    description = "VM labels to use for patching"
-}
-
 variable "instance_name_prefixes" {
     type = string
     description = "Instance name prefix for paching"
