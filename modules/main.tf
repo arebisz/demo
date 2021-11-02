@@ -2,8 +2,8 @@ module "agent_policy" {
   source     = "terraform-google-modules/cloud-operations/google//modules/agent-policy"
   version    = "~> 0.1.0"
 
-  project_id = var.project_id
-  policy_id  = "OpsAgent policy
+  project_id = "<PROJECT ID>"
+  policy_id  = "ops-agents-example-policy"
   agent_rules = [
     {
       type               = "ops-agent"
@@ -14,13 +14,14 @@ module "agent_policy" {
   ]
   group_labels = [
     {
-      cos_managed = "yes"
+      env = "prod"
+      app = "myproduct"
     }
   ]
   os_types = [
     {
-      short_name = "debian"
-      version = "10"
+      short_name = "centos"
+      version    = "8"
     },
   ]
 }
