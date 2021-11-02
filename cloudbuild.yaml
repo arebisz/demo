@@ -7,7 +7,7 @@ steps:
   waitFor:
     - init
 
-logsBucket: 'gs://$PROJECT_ID-terraform-tfstate'
+logsBucket: 'gs://$PROJECT_ID-patching-tfstate'
 options:
   logStreamingOption: STREAM_ON
   logging: GCS_ONLY
