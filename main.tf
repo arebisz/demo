@@ -37,6 +37,6 @@ module "patching" {
     one_time_schedule_execute_time = var.one_time_schedule_execute_time
 }
     
-#module "logging" {
-#    source = "./logging"
-#}
+module "logging" {
+    source = "./logging"
+}
