@@ -1,7 +1,6 @@
 variable "project_id" {}
 variable "zone" {}
 variable "region" {}
-variable "cos_patching_labels" {}
 variable "instance_name_prefixes" {}
 variable "duration" {}
 variable "rollout_mode" {}
