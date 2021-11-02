@@ -22,26 +22,10 @@ variable "TagsConditionValue" {
     description = "Resources with this Tag Value will be managed by COS"
 }
 
-#variable "project" {
-#    type =  string 
-#}
-
 variable "monitoring_enabled" {
     type = bool
     default = false
 }
-
-variable "email_address" {
-    type = string 
-}
-
-variable "email_display_name" {
-    type = string 
-}
-
-#variable "project_num" {
-#    type = string
-#}
 
 variable "patching_enabled" {
     type = bool
