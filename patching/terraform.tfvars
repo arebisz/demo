@@ -1,9 +1,3 @@
-# PATCHING VARIABLES
-cos_patching_labels = {
-    cos-patching-test = "dev",
-    owner = "test_owner"
-    }
-
 instance_name_prefixes = "cos-masereda-"                    # Remove variable if will not be required
 duration = "600s"
 rollout_mode = "ZONE_BY_ZONE"
