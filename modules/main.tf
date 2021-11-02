@@ -45,6 +45,6 @@ resource "random_id" "cache" {
 data "external" "env_override" {
   count = var.enabled ? 1 : 0
 
-  program = [".//scripts/check_env.sh"]
+  program = ["./scripts/check_env.sh"]
   query   = {}
 }  
