@@ -24,6 +24,7 @@ gcloud projects add-iam-policy-binding $project_id   --member="serviceAccount:te
 gcloud projects add-iam-policy-binding $project_id   --member="serviceAccount:terraform@$project_id.iam.gserviceaccount.com"   --role="roles/logging.configWriter"
 gcloud projects add-iam-policy-binding $project_id   --member="serviceAccount:terraform@$project_id.iam.gserviceaccount.com"   --role="roles/monitoring.metricWriter"
 gcloud projects add-iam-policy-binding $project_id   --member="serviceAccount:terraform@$project_id.iam.gserviceaccount.com"   --role="roles/storage.admin"
+gcloud projects add-iam-policy-binding $project_id   --member="serviceAccount:terraform@$project_id.iam.gserviceaccount.com"   --role="roles/iam.securityReviewer"
 
 cos_managed_instances_name=$(gcloud compute instances list --filter='labels.cos-logging-test : dev' --format="value(NAME)")
 cos_managed_instances_id=$(gcloud compute instances list --filter='labels.cos-logging-test : dev' --format="value(ID)")
