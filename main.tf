@@ -22,9 +22,6 @@ module "monitoring" {
 module "patching" {
     count = var.patching_enabled ? 1 : 0
     source = "./patching"
-    project_id = var.project_id
-    zone = var.zone
-    region = var.region
     instance_name_prefixes = var.instance_name_prefixes
     duration = var.duration
     rollout_mode = var.rollout_mode
