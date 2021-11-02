@@ -27,14 +27,6 @@ variable "monitoring_enabled" {
     default = false
 }
 
-variable "email_address" {
-    type = string 
-}
-
-variable "email_display_name" {
-    type = string 
-}
-
 variable "patching_enabled" {
     type = bool
     default = false
