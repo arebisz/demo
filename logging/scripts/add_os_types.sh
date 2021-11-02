@@ -11,12 +11,12 @@ gcloud services enable compute.googleapis.com
 gcloud services enable osconfig.googleapis.com
 gcloud services enable cloudresourcemanager.googleapis.com
 gcloud services enable logging.googleapis.com
-iam_accounts=($gcloud iam service-accounts list sed -n 's/.*EMAIL: //p')
-for account in $iam_accounts; do
-    if [[ ! "terraform@logging-dla-capa-terraform.iam.gserviceaccount.com" =~ "$account" ]]; then
-    gcloud iam service-accounts create terraform   --description="Service account for VM provisioning with Terraform"   --display-name="terraform"
-    fi
-    done
+#iam_accounts=($gcloud iam service-accounts list sed -n 's/.*EMAIL: //p')
+#for account in $iam_accounts; do
+#    if [[ ! "terraform@logging-dla-capa-terraform.iam.gserviceaccount.com" =~ "$account" ]]; then
+#    gcloud iam service-accounts create terraform   --description="Service account for VM provisioning with Terraform"   --display-name="terraform"
+#    fi
+#    done
 gcloud projects add-iam-policy-binding $project_id   --member="serviceAccount:terraform@$project_id.iam.gserviceaccount.com"   --role="roles/compute.admin" 
 gcloud projects add-iam-policy-binding $project_id   --member="serviceAccount:terraform@$project_id.iam.gserviceaccount.com"   --role="roles/osconfig.guestPolicyAdmin" 
 gcloud projects add-iam-policy-binding $project_id   --member="serviceAccount:terraform@$project_id.iam.gserviceaccount.com"   --role="roles/iam.serviceAccountUser"
