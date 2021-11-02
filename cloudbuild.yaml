@@ -4,7 +4,6 @@ steps:
   args: ['init']
 - name: hashicorp/terraform:latest
   args: ['apply', '-auto-approve']
-  env: ['monitoring=false']
   waitFor:
     - init
 
