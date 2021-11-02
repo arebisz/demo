@@ -1,50 +1,29 @@
-locals {
-  cache_path           = local.skip_download ? "" : "./cache/${random_id.cache[0].hex}"
-  gcloud_bin_path      = "${local.cache_path}/google-cloud-sdk/bin"
-  components           = join(",", var.additional_components)
-  gcloud              = local.skip_download ? "gcloud" : "${local.gcloud_bin_path}/gcloud"
-  additional_components_command                = "./scripts/check_components.sh ${local.gcloud} ${local.components}"
-  download_override = var.enabled ? data.external.env_override[0].result.download : ""
-  skip_download     = local.download_override == "always" ? false : (local.download_override == "never" ? true : var.skip_download)
+module "gcloud-upsert" {
+  source = "terraform-google-modules/gcloud/google"
+
+  platform              = "linux"
+  additional_components = ["beta"]
+  gcloud_sdk_version    = "325.0.0"
+  create_cmd_entrypoint = "${path.module}/scripts/create-update-script.sh"
+  create_cmd_body       = <<-EOT
+    ${var.project_id} ${jsonencode(var.policy_id)} \
+    ${jsonencode(var.description == null ? "" : var.description)} \
+    ${base64encode(jsonencode(var.agent_rules))} \
+    ${base64encode(jsonencode(var.group_labels == null ? [] : var.group_labels))} \
+    ${base64encode(jsonencode(var.os_types))} \
+    ${base64encode(jsonencode(var.zones == null ? [] : var.zones))} \
+    ${base64encode(jsonencode(var.instances == null ? [] : var.instances))}
+    EOT
+  create_cmd_triggers   = { uuid = uuid() }
 }
 
-module "agent_policy" {
-  source     = "terraform-google-modules/cloud-operations/google//modules/agent-policy"
-  version    = "~> 0.1.0"
+module "gcloud-destroy" {
+  source = "terraform-google-modules/gcloud/google"
 
-  project_id = "<PROJECT ID>"
-  policy_id  = "ops-agents-example-policy"
-  agent_rules = [
-    {
-      type               = "ops-agent"
-      version            = "current-major"
-      package_state      = "installed"
-      enable_autoupgrade = true
-    },
-  ]
-  group_labels = [
-    {
-      env = "prod"
-      app = "myproduct"
-    }
-  ]
-  os_types = [
-    {
-      short_name = "centos"
-      version    = "8"
-    },
-  ]
+  platform              = "linux"
+  gcloud_sdk_version    = "325.0.0"
+  additional_components = ["beta"]
+
+  destroy_cmd_entrypoint = "${path.module}/scripts/delete-script.sh"
+  destroy_cmd_body       = "${var.project_id} ${jsonencode(var.policy_id)}"
 }
-  
-resource "random_id" "cache" {
-  count = (!local.skip_download) ? 1 : 0
-
-  byte_length = 4
-}
-  
-data "external" "env_override" {
-  count = var.enabled ? 1 : 0
-
-  program = ["./scripts/check_env.sh"]
-  query   = {}
-}  
