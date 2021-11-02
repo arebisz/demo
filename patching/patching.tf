@@ -3,9 +3,6 @@ resource "google_os_config_patch_deployment" "recurring_patching" {
     count = var.recurring_schedule ? 1 : 0
     patch_deployment_id = "cos-patching"
     instance_filter {
-        group_labels {
-            labels = var.cos_patching_labels
-        }
         instance_name_prefixes = ["${var.instance_name_prefixes}"]
         zones = ["${var.zone}"]
     }
@@ -97,9 +94,6 @@ resource "google_os_config_patch_deployment" "one_time_patching" {
     count = var.recurring_schedule ? 0 : 1
     patch_deployment_id = "cos-patching"
     instance_filter {
-        group_labels {
-            labels = var.cos_patching_labels
-        }
         instance_name_prefixes = ["${var.instance_name_prefixes}"]
         zones = ["${var.zone}"]
     }
