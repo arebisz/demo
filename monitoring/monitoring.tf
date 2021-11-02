@@ -11,10 +11,6 @@ resource "google_monitoring_notification_channel" "notification_channel" {
     }
 }
 
-output "email_example_id" {
-    value = google_monitoring_notification_channel.notification_channel.name
-}
-
 resource "google_monitoring_alert_policy" "cpu_alert" {
     display_name = "Over 90% CPU Utilization detected over a period of 30 minutes"
     combiner = "OR"
