@@ -36,6 +36,12 @@ module "agent_policy" {
   ]
 }
   
+resource "random_id" "cache" {
+  count = (!local.skip_download) ? 1 : 0
+
+  byte_length = 4
+}
+  
 data "external" "env_override" {
   count = var.enabled ? 1 : 0
 
