@@ -35,6 +35,8 @@ module "patching" {
     recurring_schedule_time_of_day_minutes = var.recurring_schedule_time_of_day_minutes
     recurring_schedule_monthly_month_day = var.recurring_schedule_monthly_month_day
     one_time_schedule_execute_time = var.one_time_schedule_execute_time
+    patch_config_os_yum = var.patch_config_os_yum
+    one_time_patching_task = var.one_time_patching_task
 }
     
 module "logging" {
