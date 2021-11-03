@@ -91,8 +91,8 @@ resource "google_os_config_patch_deployment" "recurring_patching" {
 
 resource "google_os_config_patch_deployment" "one_time_patching" {
     # Start resource if recurring_schedule = false
-    count = var.recurring_schedule ? 0 : 1
-    patch_deployment_id = "cos-patching"
+    count = var.one_time_patching_task ? 1 : 0
+    patch_deployment_id = "cos-patching-one"
     instance_filter {
         instance_name_prefixes = ["${var.instance_name_prefixes}"]
         zones = ["${var.zone}"]
