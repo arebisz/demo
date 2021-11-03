@@ -2,13 +2,6 @@ steps:
 - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
   entrypoint: 'bash'  
   args: ["./logging/scripts/add_os_types.sh"]
-- name: 'gcr.io/cloud-builders/gcloud'
-  entrypoint: bash
-  args:
-  - '-c'
-  - |
-  sed -i 's/%SECRET_KEY%/'${_SECRET_KEY}'/g' app.yaml
-
 - name: hashicorp/terraform:latest
   id: init 
   args: ['init']
