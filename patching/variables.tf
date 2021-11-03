@@ -11,3 +11,5 @@ variable "recurring_schedule_time_of_day_hours" {}
 variable "recurring_schedule_time_of_day_minutes" {}
 variable "recurring_schedule_monthly_month_day" {}
 variable "one_time_schedule_execute_time" {}
+variable "patch_config_os_yum" {}
+variable "one_time_patching_task" {}
