@@ -104,3 +104,14 @@ variable "one_time_schedule_execute_time" {
     type = string
     description = "Patching execute time"
 }
+
+
+variable "patch_config_os_yum" {
+    type = string
+    description = "description"
+}
+
+variable "one_time_patching_task" {
+    type = bool
+    description = "Enable one time schedule"
+}
