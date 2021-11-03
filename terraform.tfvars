@@ -10,12 +10,14 @@ instance_name_prefixes = "cos-arebisz-"                    # Remove variable if 
 duration = "600s"
 rollout_mode = "ZONE_BY_ZONE"
 rollout_disruption_budget_percentage = 25
-recurring_schedule = false
+recurring_schedule = true
+one_time_patching_task = true
+patch_config_os_yum = true
 recurring_schedule_time_zone_id = "Europe/Warsaw"           # Use in case of recurring_schedule = true
 recurring_schedule_time_of_day_hours = 10                   # Use in case of recurring_schedule = true
 recurring_schedule_time_of_day_minutes = 30                 # Use in case of recurring_schedule = true
 recurring_schedule_monthly_month_day = -1                   # Use in case of recurring_schedule = true. -1 indicates the last day of the month
-one_time_schedule_execute_time = "2021-11-03T07:30:00Z"     # Use in case of recurring_schedule = false
+one_time_schedule_execute_time = "2021-11-03T08:30:00Z"     # Use in case of recurring_schedule = false
 
 # MONITORING VARIABLES
 email_address = "agnieszka.rebisz@capgemini.com"
