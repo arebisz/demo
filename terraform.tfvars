@@ -17,7 +17,7 @@ recurring_schedule_time_zone_id = "Europe/Warsaw"           # Use in case of rec
 recurring_schedule_time_of_day_hours = 10                   # Use in case of recurring_schedule = true
 recurring_schedule_time_of_day_minutes = 30                 # Use in case of recurring_schedule = true
 recurring_schedule_monthly_month_day = -1                   # Use in case of recurring_schedule = true. -1 indicates the last day of the month
-one_time_schedule_execute_time = "2021-11-03T09:55:00Z"     # Use in case of recurring_schedule = false
+one_time_schedule_execute_time = "2021-11-04T10:00:00Z"     # Use in case of recurring_schedule = false
 
 # MONITORING VARIABLES
 email_address = "agnieszka.rebisz@capgemini.com"
