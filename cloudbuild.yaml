@@ -2,9 +2,13 @@ steps:
 - name: hashicorp/terraform:latest
   id: init 
   args: ['init']
+  env:
+    - 'PROJECT_ID=$PROJECT_ID'
   
 - name: hashicorp/terraform:latest
   args: ['apply', '-auto-approve']
+  env:
+    - 'PROJECT_ID=$PROJECT_ID'
   waitFor:
     - init
 
