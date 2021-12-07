@@ -5,14 +5,16 @@ steps:
 - name: hashicorp/terraform:latest
   id: init 
   args: ['init']
+- name: hashicorp/terraform:plan
+  args: ['plan']
+  waitFor:
+    - init
 - name: hashicorp/terraform:latest
   args: ['apply', '-auto-approve']
   waitFor:
-    - init
+    - plan
 
-logsBucket: 'gs://$PROJECT_ID-patching-tfstate'
+logsBucket: 'gs://$PROJECT_ID-tfstate'
 options:
   logStreamingOption: STREAM_ON
   logging: GCS_ONLY
-
-tags: ['cos']
