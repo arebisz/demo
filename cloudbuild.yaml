@@ -11,8 +11,3 @@ steps:
     - 'PROJECT_ID=$PROJECT_ID'
   waitFor:
     - init
-
-logsBucket: 'gs://$PROJECT_ID-tfstate'
-options:
-  logStreamingOption: STREAM_ON
-  logging: GCS_ONLY
