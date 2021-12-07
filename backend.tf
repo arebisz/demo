@@ -1,6 +1,6 @@
 terraform {
     backend "gcs" {
-        bucket = "ccp-lab-tfstate"
+        bucket = "$PROJECT_ID-tfstate"
         prefix = "terraform/state"
     }
 }
