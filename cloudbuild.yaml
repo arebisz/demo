@@ -5,14 +5,11 @@ steps:
 - name: hashicorp/terraform:latest
   id: init 
   args: ['init']
-- name: hashicorp/terraform:plan
-  args: ['plan']
-  waitFor:
-    - init
+  
 - name: hashicorp/terraform:latest
   args: ['apply', '-auto-approve']
   waitFor:
-    - plan
+    - init
 
 logsBucket: 'gs://$PROJECT_ID-tfstate'
 options:
