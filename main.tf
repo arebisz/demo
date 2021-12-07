@@ -1,5 +1,5 @@
 provider "google" {
-    project = var.PROJECT
+    project = var.project
 }
 
 module "monitoring" {
