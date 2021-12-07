@@ -2,7 +2,7 @@ variable "project" {
     type =  string 
 }
 
-variable "storage_name" {
+variable "bucket_name" {
     type =  string
 }
 
