@@ -4,7 +4,10 @@ steps:
   args: ['init']
   
 - name: hashicorp/terraform:latest
-  args: ['apply', '-auto-approve']
+  args: [
+  'apply', 
+  '-var=PROJECT=ccp-lab,
+  '-auto-approve']
   waitFor:
     - init
 
