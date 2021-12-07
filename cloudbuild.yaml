@@ -1,8 +1,4 @@
 steps:
-- name: 'gcr.io/cloud-builders/gcloud'
-  entrypoint: 'bash'
-  id: backend_bucket
-  
 - name: hashicorp/terraform:latest
   id: init 
   args: ['init']
