@@ -1,1 +1,1 @@
-email_address = agnieszka.rebisz@capgemini.com
+EMAIL_ADDRESS = agnieszka.rebisz@capgemini.com
