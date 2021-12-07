@@ -1,10 +1,9 @@
 steps:
-substitutions:
-    _EMAIL_ADDRESS: agnieszka.rebisz@capgemini.com
 - name: hashicorp/terraform:latest
   id: init 
   args: ['init']
-  
+substitutions:
+    _EMAIL_ADDRESS: agnieszka.rebisz@capgemini.com
 - name: hashicorp/terraform:latest
   args: ['apply', '-auto-approve']
   waitFor:
