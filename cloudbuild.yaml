@@ -8,5 +8,5 @@ steps:
   waitFor:
     - iniT
 substitutions:
-    email_address: agnieszka.rebisz@capgemini.com
+    _EMAIL_ADDRESS: agnieszka.rebisz@capgemini.com
 
