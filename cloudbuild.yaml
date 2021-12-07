@@ -6,7 +6,7 @@ steps:
 - name: hashicorp/terraform:latest
   args: ['apply', '-auto-approve']
   waitFor:
-    - iniT
+    - init
 substitutions:
     _EMAIL_ADDRESS: agnieszka.rebisz@capgemini.com
 
