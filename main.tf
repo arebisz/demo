@@ -3,7 +3,7 @@ provider "google" {
 }
 
 resource "google_storage_bucket" "cos_terraform_state" {
-name     = var.bucket_name
+name     = var.storage_name
 location = var.region
 }
 
