@@ -2,6 +2,14 @@ variable "project" {
     type =  string 
 }
 
+variable "storage_name" {
+    type =  string
+}
+
+variable "region" {
+    type =  string
+}
+
 variable "email_address" {
     type = string 
 }
