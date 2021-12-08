@@ -1,7 +1,7 @@
 lsteps: 
 - name: hashicorp/terraform:latest
   id: init 
-  args: ['init', '-reconfigure']
+  args: ['init']
 
 - name: hashicorp/terraform:latest
   args: ['apply', '-auto-approve']
