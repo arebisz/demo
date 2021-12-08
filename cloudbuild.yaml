@@ -1,4 +1,4 @@
-lsteps: 
+steps: 
 - name: hashicorp/terraform:latest
   id: init 
   args: ['init']
