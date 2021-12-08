@@ -1,3 +1,3 @@
-project = "ccp-lab"
+project     = "ccp-lab"
 bucket_name = "cos_gcs_bucket"
-region = "us-east1"
+region      = "us-east1"
