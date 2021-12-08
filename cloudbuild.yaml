@@ -1,11 +1,7 @@
-steps:
-- name: hashicorp/terraform:latest
-  id: destroy
-  args: ['destroy']
-  
+steps: 
 - name: hashicorp/terraform:latest
   id: init 
-  args: ['init']
+  args: ['init', '-reconfigure']
   waitFor:
     - destroy
   
