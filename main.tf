@@ -12,3 +12,18 @@ module "monitoring" {
     count  = var.include_monitoring_module ? 1 : 0
     email_address = var.email_address
 }
+
+module "logging" {
+    source = "./modules/logging"
+    count  = var.include_logging_module ? 1 : 0
+}
+
+module "patching" {
+    source = "./modules/patching"
+    count  = var.include_patching_module ? 1 : 0
+}
+
+module "backup" {
+    source = "./modules/backup"
+    count  = var.include_backup_module ? 1 : 0
+}
