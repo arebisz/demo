@@ -1,7 +1,4 @@
 # GENERAL
-variable "project" {
-    type =  string 
-}
 variable "project_id" {
   type        = string
   description = "GCP project to use"
