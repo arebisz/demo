@@ -4,7 +4,7 @@ resource "google_monitoring_group" "cos_managed" {
 }
 
 resource "google_monitoring_notification_channel" "notification_channel" {
-    display_name = var.email_display_name
+    display_name = var.email_address
     type = "email"
     labels = {
         email_address = var.email_address
