@@ -9,3 +9,7 @@ variable "bucket_name" {
 variable "region" {
     type =  string
 }
+
+variable "email_address" {
+    type = string 
+}
