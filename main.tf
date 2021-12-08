@@ -1,3 +1,11 @@
+terraform {
+  required_providers {
+    google = {
+      source = "hashicorp/google"
+    }
+  }
+}
+
 provider "google" {
     project = var.project
 }
@@ -9,5 +17,5 @@ resource "google_storage_bucket" "cos_gcs" {
 
 module "monitoring" {
     source = "./monitoring"
-    count = var.include_monitoring_module ? 1 : 0
+    count  = var.include_monitoring_module ? 1 : 0
 }
