@@ -1,6 +1,5 @@
 provider "google" {
     project = var.project
-    email_address = var.EMAIL_ADDRESS
 }
 
 resource "google_storage_bucket" "cos_gcs" {
