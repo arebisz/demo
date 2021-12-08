@@ -1,10 +1,15 @@
 steps:
 - name: hashicorp/terraform:latest
+  id: destroy
+  args: ['destroy']
+  
+- name: hashicorp/terraform:latest
   id: init 
   args: ['init']
+  waitFor:
+    - destroy
   
 - name: hashicorp/terraform:latest
   args: ['apply', '-auto-approve']
   waitFor:
     - init
-
