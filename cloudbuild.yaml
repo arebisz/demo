@@ -7,5 +7,7 @@ steps:
 
 - name: hashicorp/terraform:latest
   args: ['apply', '-auto-approve']
+  env:
+    - 'EMAIL_ADDRESS=$EMAIL_ADDRESS'
   waitFor:
     - init
