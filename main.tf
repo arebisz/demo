@@ -7,6 +7,17 @@ resource "google_storage_bucket" "cos_gcs" {
     location = var.region
 }
 
+module "infra" {
+  source                = "./modules/infra"
+  project_id            = var.project_id
+  region                = var.region
+  zone                  = var.zone
+  ApiCompanyName        = var.ApiCompanyName
+  SNOWPubSubTopicName   = var.SNOWPubSubTopicName
+  SourceBucketPrefix    = var.SourceBucketPrefix
+  SnowSecretVersionName = var.SnowSecretVersionName
+}
+
 module "monitoring" {
     source        = "./modules/monitoring"
     count         = var.include_monitoring_module ? 1 : 0
