@@ -10,7 +10,7 @@ resource "google_storage_bucket" "cos_gcs" {
 module "monitoring" {
     source = "./modules/monitoring"
     count  = var.include_monitoring_module ? 1 : 0
-    email_address = var.email_address
+    email_address = var.EMAIL_ADDRESS
 }
 
 module "logging" {
