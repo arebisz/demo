@@ -10,7 +10,7 @@ variable "region" {
     type =  string
 }
 
-variable "email_address" {
+variable "EMAIL_ADDRESS" {
     type = string 
 }
 
