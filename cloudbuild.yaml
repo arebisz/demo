@@ -7,8 +7,3 @@ steps:
   args: ['apply', '-auto-approve']
   waitFor:
     - init
-    
-logsBucket: 'gs://cos_terraform_state'
-options:
-  logStreamingOption: STREAM_ON
-  logging: GCS_ONLY
