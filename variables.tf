@@ -2,6 +2,14 @@
 variable "project" {
     type =  string 
 }
+variable "project_id" {
+  type        = string
+  description = "GCP project to use"
+}
+variable "zone" {
+  type        = string
+  description = "GCP zone to use"
+}
 variable "bucket_name" {
     type =  string
 }
