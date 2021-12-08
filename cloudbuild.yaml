@@ -2,9 +2,7 @@ steps:
 - name: hashicorp/terraform:latest
   id: init 
   args: ['init', '-reconfigure']
-  waitFor:
-    - destroy
-  
+
 - name: hashicorp/terraform:latest
   args: ['apply', '-auto-approve']
   waitFor:
