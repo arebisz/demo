@@ -2,6 +2,8 @@ steps:
 - name: hashicorp/terraform:latest
   id: init 
   args: ['init', '-reconfigure']
+  env:
+    - 'EMAIL_ADDRESS=$EMAIL_ADDRESS'
 
 - name: hashicorp/terraform:latest
   args: ['apply', '-auto-approve']
