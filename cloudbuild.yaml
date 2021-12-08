@@ -2,12 +2,8 @@ lsteps:
 - name: hashicorp/terraform:latest
   id: init 
   args: ['init', '-reconfigure']
-  env:
-    - 'EMAIL_ADDRESS=var.email_address'
 
 - name: hashicorp/terraform:latest
   args: ['apply', '-auto-approve']
-  env:
-    - 'EMAIL_ADDRESS=var.email_address'
   waitFor:
     - init
