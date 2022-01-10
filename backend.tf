@@ -1,6 +1,6 @@
 terraform {
     backend "gcs" {
-            bucket = "cos_terraform_state"   
+            bucket = "cos_tf_state"   
             prefix = "tfstate"           
     }
 }
